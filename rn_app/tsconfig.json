@@ -1,0 +1,33 @@
+{
+  "extends": "@react-native/typescript-config/tsconfig.json" /* Recommended React Native TSConfig base */,
+  "include": ["./app.d.ts"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "sourceMap": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "sourceRoot": "./app/",
+    "baseUrl": "app",
+    "paths": {
+      "Common/*": ["Common/*"],
+      "Community/*": ["Community/*"],
+      "Explore/*": ["Explore/*"],
+      "Home/*": ["Home/*"],
+      "Onboarding/*": ["Onboarding/*"],
+      "Profile/*": ["Profile/*"],
+      "SadhguruExclusive/*": ["SadhguruExclusive/*"],
+      "NewMandala/*": ["NewMandala/*"],
+      "SoundsOfIsha/*": ["SoundsOfIsha/*"],
+      "Wallpapers/*": ["Wallpapers/*"],
+      "Wisdom/*": ["Wisdom/*"],
+      "Yoga/*": ["Yoga/*"],
+      "YogaMeditate/*": ["Yoga/sections/meditate/*"],
+      "YogaPrograms/*": ["Yoga/sections/programs/*"],
+      "YogaTools/*": ["Yoga/sections/tools/*"],
+      "IEO/*": ["IEO/*"],
+      "IEO-New/*": ["IEO-New/*"],
+      "WebAppModule": ["WebAppModule/*"]
+    }
+  }
+}
