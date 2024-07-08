@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_poc/components/CustomPageRoute.dart';
 import 'package:flutter_poc/images.dart';
 import 'package:flutter_poc/screens/hero_anim_target_screen.dart';
 
@@ -18,44 +20,48 @@ class HeroAnimSourceScreen extends HookWidget {
         pageBuilder: (context, animation, secondaryAnimation) =>
             const HeroAnimTargetScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          if (option == PageTransitionOption.Custom) {
-            return SlideTransition(
-              position: Tween<Offset>(
-                begin: const Offset(1.0, 0.0),
-                end: Offset.zero,
-              ).chain(CurveTween(curve: Curves.ease)).animate(animation),
-              child: ScaleTransition(
-                  scale: animation,
-                  child: RotationTransition(
-                    turns: animation.drive(Tween(begin: 0, end: 3)),
-                    child: child,
-                  )),
-            );
-          } else if (option == PageTransitionOption.Fade) {
-            return FadeTransition(opacity: animation, child: child);
-          } else if (option == PageTransitionOption.Slide) {
-            return SlideTransition(
-              position: Tween<Offset>(
-                begin: const Offset(1.0, 0.0),
-                end: Offset.zero,
-              ).chain(CurveTween(curve: Curves.ease)).animate(animation),
-              child: child,
-            );
-          } else if (option == PageTransitionOption.FadedSlide) {
-            return FadeTransition(
-              opacity: animation,
-              child: SlideTransition(
+          Widget getTransition() {
+            if (option == PageTransitionOption.Custom) {
+              return SlideTransition(
                 position: Tween<Offset>(
-                  begin: const Offset(0.0, 1.0),
+                  begin: const Offset(1.0, 0.0),
                   end: Offset.zero,
-                )
-                    .chain(CurveTween(curve: Curves.easeOutCubic))
-                    .animate(animation),
+                ).chain(CurveTween(curve: Curves.ease)).animate(animation),
+                child: ScaleTransition(
+                    scale: animation,
+                    child: RotationTransition(
+                      turns: animation.drive(Tween(begin: 0, end: 3)),
+                      child: child,
+                    )),
+              );
+            } else if (option == PageTransitionOption.Fade) {
+              return FadeTransition(opacity: animation, child: child);
+            } else if (option == PageTransitionOption.Slide) {
+              return SlideTransition(
+                position: Tween<Offset>(
+                  begin: const Offset(1.0, 0.0),
+                  end: Offset.zero,
+                ).chain(CurveTween(curve: Curves.ease)).animate(animation),
                 child: child,
-              ),
-            );
+              );
+            } else if (option == PageTransitionOption.FadedSlide) {
+              return FadeTransition(
+                opacity: animation,
+                child: SlideTransition(
+                  position: Tween<Offset>(
+                    begin: const Offset(0.0, 1.0),
+                    end: Offset.zero,
+                  )
+                      .chain(CurveTween(curve: Curves.easeOutCubic))
+                      .animate(animation),
+                  child: child,
+                ),
+              );
+            }
+            return child;
           }
-          return child;
+
+          return SwipeBackDetector(child: getTransition());
         },
         transitionDuration: Duration(
             milliseconds: option == PageTransitionOption.Custom
@@ -72,6 +78,7 @@ class HeroAnimSourceScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -86,7 +93,7 @@ class HeroAnimSourceScreen extends HookWidget {
                 Hero(
                   tag: 'big-image',
                   child: Image(
-                    image: NetworkImage(images[0]),
+                    image: NetworkImage(images[1]),
                     width: 250,
                     fit: BoxFit.contain,
                   ),

@@ -37,7 +37,7 @@ export const HomeScreen = () => {
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => navigation.navigate('GalleryViewScreen')}
+        onPress={() => navigation.navigate('GalleryViewSourceScreen')}
         className="bg-blue-500 p-4 rounded mb-2">
         <Text className="text-white text-center">
           Gallery View and Blur test Screen

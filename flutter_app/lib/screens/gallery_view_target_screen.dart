@@ -14,7 +14,7 @@ class GalleryViewTargetScreen extends HookWidget {
           physics: const BouncingScrollPhysics(),
           slivers: [
             SliverAppBar(
-              pinned: true,
+              automaticallyImplyLeading: false,
               stretch: true,
               floating: true,
               expandedHeight: 400,

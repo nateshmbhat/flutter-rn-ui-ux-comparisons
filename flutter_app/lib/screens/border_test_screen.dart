@@ -45,6 +45,7 @@ class BorderTestScreen extends HookWidget {
     }
 
     return Scaffold(
+      appBar: AppBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

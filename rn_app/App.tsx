@@ -15,7 +15,9 @@ import {HeroAnimTargetScreen} from './app/TestScreen3';
 import {HeroAnimSourceScreen} from './app/TestScreen2';
 import {HomeScreen} from './app/HomeScreen';
 import {BlurTestScreen} from './app/BlurTestScreen';
-const MainStack = createStackNavigator();
+import {GalleryViewSourceScreen} from './app/GalleryViewSourceScreen';
+import {GalleryViewTargetScreen} from './app/GalleryViewTargetScreen';
+const MainStack = createNativeStackNavigator();
 
 function App(): React.JSX.Element {
   const backgroundStyle = {
@@ -47,14 +49,24 @@ function App(): React.JSX.Element {
             component={HeroAnimSourceScreen}
           />
           <MainStack.Screen
+            options={{headerShown: false}}
+            name="GalleryViewSourceScreen"
+            component={GalleryViewSourceScreen}
+          />
+          <MainStack.Screen
+            options={{headerShown: false}}
+            name="GalleryViewTargetScreen"
+            component={GalleryViewTargetScreen}
+          />
+          <MainStack.Screen
             options={{
               headerShown: false,
-              // animation: 'default',
-              // animationDuration: 2000,
-              transitionSpec: {
-                open: {animation: 'timing', config: {duration: 1000}},
-                close: {animation: 'timing', config: {duration: 1000}},
-              },
+              animation: 'default',
+              animationDuration: 3000,
+              // transitionSpec: {
+              //   open: {animation: 'timing', config: {duration: 1000}},
+              //   close: {animation: 'timing', config: {duration: 1000}},
+              // },
             }}
             name="HeroAnimTargetScreen"
             component={HeroAnimTargetScreen}

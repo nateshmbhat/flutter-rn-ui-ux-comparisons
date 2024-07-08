@@ -16,6 +16,7 @@ class BlurTestScreen extends HookWidget {
     }
 
     return Scaffold(
+      appBar: AppBar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
