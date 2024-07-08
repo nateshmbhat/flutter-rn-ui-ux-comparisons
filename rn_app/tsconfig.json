@@ -1,6 +1,6 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json" /* Recommended React Native TSConfig base */,
-  "include": ["./app.d.ts"],
+  "include": ["app.d.ts"],
   "compilerOptions": {
     "jsx": "react-jsx",
     "sourceMap": true,
