@@ -19,6 +19,7 @@ import {GalleryViewSourceScreen} from './app/GalleryViewSourceScreen';
 import {GalleryViewTargetScreen} from './app/GalleryViewTargetScreen';
 import {ColorTestScreen} from './app/ColorTestScreen';
 import {ImageTestScreen} from './app/ImageTestScreen';
+import {BorderColorTestScreen} from './app/BorderColorTestScreen';
 const MainStack = createStackNavigator();
 
 function App(): React.JSX.Element {
@@ -69,6 +70,11 @@ function App(): React.JSX.Element {
             options={{headerShown: false}}
             name="ColorTestScreen"
             component={ColorTestScreen}
+          />
+          <MainStack.Screen
+            options={{headerShown: false}}
+            name="BorderColorTestScreen"
+            component={BorderColorTestScreen}
           />
           <MainStack.Screen
             options={({navigation, route}) => {
