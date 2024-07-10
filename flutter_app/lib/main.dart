@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_poc/screens/blur_test_screen.dart';
 import 'package:flutter_poc/screens/border_test_screen.dart';
+import 'package:flutter_poc/screens/color_test_screen.dart';
 import 'package:flutter_poc/screens/gallery_view_source_screen.dart';
 import 'package:flutter_poc/screens/hero_anim_source_screen.dart';
+import 'package:flutter_poc/screens/image_test_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,6 +41,12 @@ class MyApp extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ImageTestScreen()));
+                },
+                child: Text('Image Alignment Test Screen')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const HeroAnimSourceScreen()));
                 },
                 child: Text('Navigation & Hero animations test Screen')),
@@ -47,7 +55,13 @@ class MyApp extends StatelessWidget {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const GalleryViewScreen()));
                 },
-                child: Text('Gallery View and Blur test Screen'))
+                child: Text('Gallery View and Blur test Screen')),
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Navigator.of(context).push(MaterialPageRoute(
+            //           builder: (context) => const ColorTestScreen()));
+            //     },
+            //     child: Text('Color test Screen'))
           ],
         );
       })),

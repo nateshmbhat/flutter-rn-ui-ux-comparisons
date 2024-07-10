@@ -14,12 +14,34 @@ export const HeroAnimSourceScreen = () => {
         <Animated.Image
           source={{uri: images[0]}}
           className="w-64 h-64"
-          sharedTransitionTag="my-image"
+          // sharedTransitionTag="my-image"
         />
         <Pressable
-          onPress={() => navigation.navigate('HeroAnimTargetScreen')}
+          onPress={() =>
+            navigation.navigate('HeroAnimTargetScreen', {
+              animationType: 'scale',
+            })
+          }
           className="mt-4 bg-blue-500 px-4 py-2 rounded">
-          <Text className="text-white">Open New Screen</Text>
+          <Text className="text-white">Open Screen (Scale Animation)</Text>
+        </Pressable>
+        <Pressable
+          onPress={() =>
+            navigation.navigate('HeroAnimTargetScreen', {
+              animationType: 'fade',
+            })
+          }
+          className="mt-4 bg-blue-500 px-4 py-2 rounded">
+          <Text className="text-white">Open Screen (Fade Animation)</Text>
+        </Pressable>
+        <Pressable
+          onPress={() =>
+            navigation.navigate('HeroAnimTargetScreen', {
+              animationType: 'custom',
+            })
+          }
+          className="mt-4 bg-blue-500 px-4 py-2 rounded">
+          <Text className="text-white">Open Screen (Custom Animation)</Text>
         </Pressable>
       </View>
     </View>

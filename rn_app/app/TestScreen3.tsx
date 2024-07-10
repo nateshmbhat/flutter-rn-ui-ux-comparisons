@@ -7,10 +7,10 @@ export const HeroAnimTargetScreen = () => {
   const {width} = useWindowDimensions();
 
   return (
-    <View className="flex-1">
+    <View className="flex-1 " style={{backgroundColor: 'rgb(176, 190, 197)'}}>
       <View className="items-center">
         <Animated.Image
-          sharedTransitionTag="my-image"
+          // sharedTransitionTag="my-image"
           source={{uri: images[0]}}
           style={{width, height: width}}
         />

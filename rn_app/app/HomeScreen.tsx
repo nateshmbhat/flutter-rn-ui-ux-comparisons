@@ -25,6 +25,12 @@ export const HomeScreen = () => {
         <Text className="text-white text-center">Open Border Test Screen</Text>
       </TouchableOpacity>
       <TouchableOpacity
+        onPress={() => navigation.navigate('ImageTestScreen')}
+        className="bg-blue-500 p-4 rounded mb-2">
+        <Text className="text-white text-center">Open Image Test Screen</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
         onPress={() => navigation.navigate('BlurTestScreen')}
         className="bg-blue-500 p-4 rounded mb-2">
         <Text className="text-white text-center">Open Blur Test Screen</Text>
@@ -43,6 +49,11 @@ export const HomeScreen = () => {
           Gallery View and Blur test Screen
         </Text>
       </TouchableOpacity>
+      {/* <TouchableOpacity
+        onPress={() => navigation.navigate('ColorTestScreen')}
+        className="bg-blue-500 p-4 rounded mb-2">
+        <Text className="text-white text-center">Color Test Screen</Text>
+      </TouchableOpacity> */}
     </View>
   );
 };

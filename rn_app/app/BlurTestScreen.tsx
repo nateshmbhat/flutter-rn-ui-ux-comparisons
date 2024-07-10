@@ -39,7 +39,7 @@ export const BlurTestScreen = () => {
             bottom: 0,
             right: 0,
           }}
-          blurType="thinMaterial"
+          blurType="light"
           blurAmount={0}
         />
       </View>

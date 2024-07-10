@@ -19,7 +19,7 @@ class GalleryViewScreen extends HookWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gallery Listing Screen'),
+        title: const Text('Gallery Listing Screen'),
       ),
       body: SafeArea(
         child: Column(
@@ -33,27 +33,30 @@ class GalleryViewScreen extends HookWidget {
                   shrinkWrap: true,
                   crossAxisCount: 3,
                   childAspectRatio: 1,
-                  children: images.map((url) {
-                    return GestureDetector(
-                      child: Hero(
-                          tag: url,
-                          child: Image.network(
-                            fit: BoxFit.cover,
-                            url,
-                            loadingBuilder: (context, child, loadingProgress) {
-                              if (loadingProgress == null) return child;
-                              return Container(
-                                  child: CircularProgressIndicator());
-                            },
-                          )),
-                      onTap: () {
-                        Navigator.of(context).push(SlowPageRoute(
-                            builder: (context) => GalleryViewTargetScreen(
-                                  clickedImage: url,
-                                )));
-                      },
-                    );
-                  }).toList()),
+                  children: images.map(
+                    (url) {
+                      return GestureDetector(
+                        child: Hero(
+                            tag: url,
+                            child: Image.network(
+                              fit: BoxFit.cover,
+                              url,
+                              loadingBuilder:
+                                  (context, child, loadingProgress) {
+                                if (loadingProgress == null) return child;
+                                return Container(
+                                    child: CircularProgressIndicator());
+                              },
+                            )),
+                        onTap: () {
+                          Navigator.of(context).push(SlowPageRoute(
+                              builder: (context) => GalleryViewTargetScreen(
+                                    clickedImage: url,
+                                  )));
+                        },
+                      );
+                    },
+                  ).toList()),
             ),
           ],
         ),

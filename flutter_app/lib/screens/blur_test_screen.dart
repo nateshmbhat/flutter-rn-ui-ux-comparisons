@@ -35,7 +35,7 @@ class BlurTestScreen extends HookWidget {
                   children: [
                     Container(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                       child: Column(
                         children: [
                           Image.network(
