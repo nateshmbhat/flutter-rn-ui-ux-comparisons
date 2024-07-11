@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {useState, useCallback} from 'react';
+import React, {useState, useCallback, useRef} from 'react';
 import {Text, View, TouchableOpacity} from 'react-native';
 import Animated, {
   useAnimatedStyle,
@@ -16,8 +16,9 @@ export const BorderTestScreen = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [useCustomBorder, setUseCustomBorder] = useState(false);
   const [customBorderWidth, setCustomBorderWidth] = useState(1.0);
-  const borderWidth = useSharedValue(2);
-  const displayedBorderWidth = useSharedValue(2);
+  const maxBorderWidth = 3;
+  const borderWidth = useSharedValue(maxBorderWidth);
+  const displayedBorderWidth = useSharedValue(maxBorderWidth);
 
   const startAnimation = useCallback(() => {
     borderWidth.value = withRepeat(
@@ -28,7 +29,7 @@ export const BorderTestScreen = () => {
   }, []);
 
   const stopAnimation = useCallback(() => {
-    borderWidth.value = useCustomBorder ? customBorderWidth : 2;
+    borderWidth.value = useCustomBorder ? customBorderWidth : maxBorderWidth;
   }, [useCustomBorder, customBorderWidth]);
 
   const toggleAnimation = useCallback(() => {
@@ -48,9 +49,11 @@ export const BorderTestScreen = () => {
     borderWidth.value = value;
   }, []);
 
-  const animatedStyle = useAnimatedStyle(() => ({
-    borderWidth: borderWidth.value,
-  }));
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      borderWidth: borderWidth.value,
+    };
+  });
 
   useDerivedValue(() => {
     displayedBorderWidth.value = borderWidth.value;
@@ -59,15 +62,17 @@ export const BorderTestScreen = () => {
 
   return (
     <View className="bg-white flex-1 justify-center items-center">
-      <Animated.View
-        className="h-[200px] w-[200px] p-5"
-        style={[{borderColor: 'black'}, animatedStyle]}>
+      <View className="flex-1 justify-center">
         <Animated.View
-          className="h-[100px] w-[100px]"
+          className="h-[200px] w-[200px] p-5"
           style={[{borderColor: 'black'}, animatedStyle]}>
-          <Text className="text-black p-0">MY Text</Text>
+          <Animated.View
+            className="h-[100px] w-[100px]"
+            style={[{borderColor: 'black'}, animatedStyle]}>
+            <Text className="text-black p-0">MY Text</Text>
+          </Animated.View>
         </Animated.View>
-      </Animated.View>
+      </View>
 
       <Text className="mt-5 text-lg text-black">
         Current Border Width: {customBorderWidth.toFixed(2)}
@@ -81,12 +86,12 @@ export const BorderTestScreen = () => {
         </Text>
       </TouchableOpacity>
 
-      <View className="w-3/4 mt-5">
+      <View className="w-3/4 mt-5 mb-5">
         <Slider
           value={customBorderWidth}
           onValueChange={handleSliderChange}
           minimumValue={0.05}
-          maximumValue={2}
+          maximumValue={maxBorderWidth}
           step={0.05}
         />
       </View>

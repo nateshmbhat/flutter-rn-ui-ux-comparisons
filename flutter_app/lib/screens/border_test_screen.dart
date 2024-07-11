@@ -6,12 +6,13 @@ class BorderTestScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    const maxBorderWidth = 3.0;
     final animationController = useAnimationController(
       duration: const Duration(seconds: 2),
     );
 
     final borderAnimation = useAnimation(
-      Tween<double>(begin: 2.0, end: 0.05).animate(
+      Tween<double>(begin: maxBorderWidth, end: 0.05).animate(
         CurvedAnimation(parent: animationController, curve: Curves.easeInOut),
       ),
     );
@@ -45,61 +46,61 @@ class BorderTestScreen extends HookWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 200,
-                    width: 200,
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      border: Border.all(width: getCurrentBorderWidth()),
-                    ),
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: SizedBox(
-                        height: 100,
-                        width: 100,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(width: getCurrentBorderWidth()),
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 200,
+                      width: 200,
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        border: Border.all(width: getCurrentBorderWidth()),
+                      ),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: SizedBox(
+                          height: 100,
+                          width: 100,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border:
+                                  Border.all(width: getCurrentBorderWidth()),
+                            ),
+                            child: const Text('MY Text'),
                           ),
-                          child: const Text('MY Text'),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              'Current Border Width: ${getCurrentBorderWidth().toStringAsFixed(2)}',
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 5),
-            ElevatedButton(
-              onPressed: toggleAnimation,
-              child: Text(
-                  isAnimating.value ? 'Stop Animation' : 'Start Animation'),
-            ),
-            const SizedBox(height: 5),
-            Slider(
-              value: customBorderWidth.value,
-              min: 0.05,
-              max: 2.0,
-              divisions: 39,
-              onChanged: setCustomBorderWidth,
-              label: customBorderWidth.value.toStringAsFixed(2),
-            ),
-            const SizedBox(height: 10),
-          ],
+              const SizedBox(height: 20),
+              Text(
+                'Current Border Width: ${getCurrentBorderWidth().toStringAsFixed(2)}',
+                style: const TextStyle(fontSize: 18),
+              ),
+              const SizedBox(height: 5),
+              ElevatedButton(
+                onPressed: toggleAnimation,
+                child: Text(
+                    isAnimating.value ? 'Stop Animation' : 'Start Animation'),
+              ),
+              const SizedBox(height: 5),
+              Slider(
+                value: customBorderWidth.value,
+                min: 0.05,
+                max: maxBorderWidth,
+                onChanged: setCustomBorderWidth,
+                label: customBorderWidth.value.toStringAsFixed(2),
+              ),
+            ],
+          ),
         ),
       ),
     );
