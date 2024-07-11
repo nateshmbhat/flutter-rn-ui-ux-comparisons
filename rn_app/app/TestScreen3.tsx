@@ -1,16 +1,23 @@
 import React from 'react';
-import {View, Text, Image, ScrollView, useWindowDimensions} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  ScrollView,
+  useWindowDimensions,
+  Pressable,
+} from 'react-native';
 import Animated from 'react-native-reanimated';
 import {images} from './HomeScreen';
 
-export const HeroAnimTargetScreen = () => {
+export const HeroAnimTargetScreen = ({navigation}) => {
   const {width} = useWindowDimensions();
 
   return (
     <View className="flex-1 " style={{backgroundColor: 'rgb(176, 190, 197)'}}>
-      <View className="items-center">
+      <ScrollView>
         <Animated.Image
-          // sharedTransitionTag="my-image"
+          sharedTransitionTag="my-image"
           source={{uri: images[0]}}
           style={{width, height: width}}
         />
@@ -24,7 +31,19 @@ export const HeroAnimTargetScreen = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </Text>
-      </View>
+
+        <Pressable
+          onPress={() =>
+            navigation.push('HeroAnimSourceScreen', {
+              animationType: 'slide_from_right',
+            })
+          }
+          className="mt-4 bg-blue-500 px-4 py-2 rounded mb-5">
+          <Text className="text-white">
+            Push Screen 2 (Ignores animation options)
+          </Text>
+        </Pressable>
+      </ScrollView>
     </View>
   );
 };

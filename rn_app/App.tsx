@@ -20,7 +20,7 @@ import {GalleryViewTargetScreen} from './app/GalleryViewTargetScreen';
 import {ColorTestScreen} from './app/ColorTestScreen';
 import {ImageTestScreen} from './app/ImageTestScreen';
 import {BorderColorTestScreen} from './app/BorderColorTestScreen';
-const MainStack = createStackNavigator();
+const MainStack = createNativeStackNavigator();
 
 function App(): React.JSX.Element {
   const backgroundStyle = {
@@ -62,7 +62,7 @@ function App(): React.JSX.Element {
             component={GalleryViewSourceScreen}
           />
           <MainStack.Screen
-            options={{headerShown: false}}
+            options={{headerShown: false, animationDuration: 3000}}
             name="GalleryViewTargetScreen"
             component={GalleryViewTargetScreen}
           />
@@ -82,6 +82,8 @@ function App(): React.JSX.Element {
                 animationType: 'default',
               };
               return {
+                animation: animationType,
+                animationDuration: 3000,
                 headerShown: false,
                 // animation: 'default',
                 // animationDuration: 3000,
