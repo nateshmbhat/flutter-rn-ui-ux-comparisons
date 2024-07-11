@@ -12,7 +12,7 @@ class ImageTestScreen extends HookWidget {
       body: Center(
         child: Container(
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.black, width: 3),
+            border: Border.all(color: Colors.black, width: 5),
             color: Colors.blue[700],
           ),
           height: 500,

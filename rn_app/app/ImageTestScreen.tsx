@@ -7,7 +7,7 @@ import {images} from './HomeScreen';
 export const ImageTestScreen = () => {
   return (
     <View className="flex-1 justify-center items-center">
-      <View className="items-center justify-center h-[500px] w-[300px] border-[3px]  bg-blue-700">
+      <View className="items-center justify-center h-[500px] w-[300px] border-[5px]  bg-blue-700">
         <Image
           source={{uri: images[5]}} // Replace with your image URL
           style={{
