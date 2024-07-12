@@ -6,12 +6,12 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   FlatList,
-  SafeAreaView,
   ScrollView,
 } from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import {images} from './HomeScreen';
 import Animated from 'react-native-reanimated';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 export const ColorTestScreen = () => {
   const route = useRoute();

@@ -6,11 +6,11 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   FlatList,
-  SafeAreaView,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {images} from './HomeScreen';
 import Animated from 'react-native-reanimated';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 export const GalleryViewSourceScreen = () => {
   const navigation = useNavigation();

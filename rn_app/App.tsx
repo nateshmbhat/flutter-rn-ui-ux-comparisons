@@ -9,7 +9,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
-import {Animated, SafeAreaView} from 'react-native';
+import {Animated} from 'react-native';
 import {BorderTestScreen} from './app/BorderTestScreen';
 import {HeroAnimTargetScreen} from './app/TestScreen3';
 import {HeroAnimSourceScreen} from './app/TestScreen2';
@@ -20,6 +20,8 @@ import {GalleryViewTargetScreen} from './app/GalleryViewTargetScreen';
 import {ColorTestScreen} from './app/ColorTestScreen';
 import {ImageTestScreen} from './app/ImageTestScreen';
 import {BorderColorTestScreen} from './app/BorderColorTestScreen';
+import {SafeAreaTestScreen} from './app/SafeAreaTest';
+import {SafeAreaView} from 'react-native-safe-area-context';
 const MainStack = createStackNavigator();
 
 function App(): React.JSX.Element {
@@ -75,6 +77,11 @@ function App(): React.JSX.Element {
             options={{headerShown: false}}
             name="BorderColorTestScreen"
             component={BorderColorTestScreen}
+          />
+          <MainStack.Screen
+            options={{headerShown: false}}
+            name="SafeAreaTestScreen"
+            component={SafeAreaTestScreen}
           />
           <MainStack.Screen
             options={({navigation, route}) => {

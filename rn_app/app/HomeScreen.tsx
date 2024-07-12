@@ -55,6 +55,12 @@ export const HomeScreen = () => {
       </TouchableOpacity>
 
       {/* <TouchableOpacity
+        onPress={() => navigation.navigate('SafeAreaTestScreen')}
+        className="bg-blue-500 p-4 rounded mb-2">
+        <Text className="text-white text-center">Safe Area test Screen</Text>
+      </TouchableOpacity> */}
+
+      {/* <TouchableOpacity
         onPress={() => navigation.navigate('ColorTestScreen')}
         className="bg-blue-500 p-4 rounded mb-2">
         <Text className="text-white text-center">Color Test Screen</Text>
