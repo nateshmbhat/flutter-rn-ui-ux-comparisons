@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_poc/screens/animation_test_screen.dart';
 import 'package:flutter_poc/screens/blur_test_screen.dart';
 import 'package:flutter_poc/screens/border_color_screen.dart';
 import 'package:flutter_poc/screens/border_test_screen.dart';
@@ -63,6 +64,13 @@ class MyApp extends StatelessWidget {
                       builder: (context) => const GalleryViewScreen()));
                 },
                 child: Text('Gallery View and Blur test Screen')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const AnimationTestScreen()));
+                },
+                child: Text('Animation test Screen')),
+
             // ElevatedButton(
             //     onPressed: () {
             //       Navigator.of(context).push(MaterialPageRoute(

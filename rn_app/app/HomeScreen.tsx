@@ -48,11 +48,24 @@ export const HomeScreen = () => {
           Gallery View and Blur test Screen
         </Text>
       </TouchableOpacity>
+
       <TouchableOpacity
         onPress={() => navigation.navigate('BorderColorTestScreen')}
         className="bg-blue-500 p-4 rounded mb-2">
         <Text className="text-white text-center">Border Color test Screen</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => navigation.navigate('AnimationTestScreen')}
+        className="bg-blue-500 p-4 rounded mb-2">
+        <Text className="text-white text-center">Animation test Screen</Text>
+      </TouchableOpacity>
+
+      {/* <TouchableOpacity
+        onPress={() => navigation.navigate('AudioTestScreen')}
+        className="bg-blue-500 p-4 rounded mb-2">
+        <Text className="text-white text-center">Audio test Screen</Text>
+      </TouchableOpacity> */}
 
       {/* <TouchableOpacity
         onPress={() => navigation.navigate('SafeAreaTestScreen')}

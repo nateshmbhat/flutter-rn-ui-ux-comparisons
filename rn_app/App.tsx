@@ -8,7 +8,7 @@ import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createStackNavigator} from '@react-navigation/stack';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Animated} from 'react-native';
 import {BorderTestScreen} from './app/BorderTestScreen';
 import {HeroAnimTargetScreen} from './app/TestScreen3';
@@ -22,9 +22,19 @@ import {ImageTestScreen} from './app/ImageTestScreen';
 import {BorderColorTestScreen} from './app/BorderColorTestScreen';
 import {SafeAreaTestScreen} from './app/SafeAreaTest';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {AnimationTestScreen} from './app/AnimationTestScreen';
+import TrackPlayer from 'react-native-track-player';
+import {AudioTestScreen} from './app/AudioTestScreen';
 const MainStack = createStackNavigator();
 
 function App(): React.JSX.Element {
+  useEffect(() => {
+    try {
+      TrackPlayer.setupPlayer();
+    } catch (e) {
+      console.error(e);
+    }
+  }, []);
   const backgroundStyle = {
     flex: 1,
   };
@@ -82,6 +92,16 @@ function App(): React.JSX.Element {
             options={{headerShown: false}}
             name="SafeAreaTestScreen"
             component={SafeAreaTestScreen}
+          />
+          <MainStack.Screen
+            options={{headerShown: false}}
+            name="AnimationTestScreen"
+            component={AnimationTestScreen}
+          />
+          <MainStack.Screen
+            options={{headerShown: false}}
+            name="AudioTestScreen"
+            component={AudioTestScreen}
           />
           <MainStack.Screen
             options={({navigation, route}) => {
