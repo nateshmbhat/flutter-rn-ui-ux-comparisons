@@ -25,6 +25,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {AnimationTestScreen} from './app/AnimationTestScreen';
 import TrackPlayer from 'react-native-track-player';
 import {AudioTestScreen} from './app/AudioTestScreen';
+import {FedraFontTestScreen} from './app/FedraFontTestScreen';
 const MainStack = createStackNavigator();
 
 function App(): React.JSX.Element {
@@ -102,6 +103,11 @@ function App(): React.JSX.Element {
             options={{headerShown: false}}
             name="AudioTestScreen"
             component={AudioTestScreen}
+          />
+          <MainStack.Screen
+            options={{headerShown: false}}
+            name="FontTestScreen"
+            component={FedraFontTestScreen}
           />
           <MainStack.Screen
             options={({navigation, route}) => {

@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "app/fonts/FedraSerifAStdBook.ttf",
+      "sha1": "81cb326c698b0685e84bba43ebca4b25a2e00d8d"
+    },
+    {
+      "path": "app/fonts/FedraSerifAStdMedium.ttf",
+      "sha1": "114e59a97d2bf5cd0879c38d1db51ccabb518344"
+    }
+  ]
+}

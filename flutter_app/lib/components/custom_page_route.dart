@@ -20,25 +20,15 @@ class SwipeBackDetector<T> extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final dragStart = useState<Offset?>(null);
-    final swipeArea = useState<Rect>(
-      Rect.fromPoints(
-        Offset(0, verticalPadding),
-        Offset(
-          swipeAreaWidth,
-          MediaQuery.of(context).size.height - verticalPadding,
-        ),
-      ),
-    );
 
-    useEffect(() {
-      swipeArea.value = Rect.fromPoints(
+    final swipeArea = useMemoized(() {
+      return Rect.fromPoints(
         Offset(0, verticalPadding),
         Offset(
           swipeAreaWidth,
           MediaQuery.of(context).size.height - verticalPadding,
         ),
       );
-      return;
     }, [verticalPadding, swipeAreaWidth]);
 
     bool popGesturePerformed(DragEndDetails dragEnd) {
@@ -47,7 +37,7 @@ class SwipeBackDetector<T> extends HookWidget {
     }
 
     void onHorizontalDragStart(DragStartDetails details) {
-      if (swipeArea.value.contains(details.localPosition)) {
+      if (swipeArea.contains(details.localPosition)) {
         dragStart.value = details.localPosition;
       } else {
         dragStart.value = null;

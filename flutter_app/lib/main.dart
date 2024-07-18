@@ -4,6 +4,7 @@ import 'package:flutter_poc/screens/blur_test_screen.dart';
 import 'package:flutter_poc/screens/border_color_screen.dart';
 import 'package:flutter_poc/screens/border_test_screen.dart';
 import 'package:flutter_poc/screens/color_test_screen.dart';
+import 'package:flutter_poc/screens/fedra_font_test_screen.dart';
 import 'package:flutter_poc/screens/gallery_view_source_screen.dart';
 import 'package:flutter_poc/screens/hero_anim_source_screen.dart';
 import 'package:flutter_poc/screens/image_test_screen.dart';
@@ -70,6 +71,13 @@ class MyApp extends StatelessWidget {
                       builder: (context) => const AnimationTestScreen()));
                 },
                 child: Text('Animation test Screen')),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const FedraFontTestScreen()));
+              },
+              child: Text('Font test Screen'),
+            ),
 
             // ElevatedButton(
             //     onPressed: () {

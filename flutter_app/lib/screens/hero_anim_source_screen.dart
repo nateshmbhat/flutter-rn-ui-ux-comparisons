@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_poc/components/CustomPageRoute.dart';
+import 'package:flutter_poc/components/custom_page_route.dart';
 import 'package:flutter_poc/images.dart';
 import 'package:flutter_poc/screens/hero_anim_target_screen.dart';
 
