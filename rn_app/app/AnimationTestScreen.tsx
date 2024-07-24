@@ -31,7 +31,6 @@ export const AnimationTestScreen = () => {
         },
         {translateY: withTiming(animVal.value * -100, {duration: 1000})},
       ],
-      filter: `blur(${animVal.value * 10}px)`,
     };
   });
 

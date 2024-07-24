@@ -61,15 +61,21 @@ export const HomeScreen = () => {
         <Text className="text-white text-center">Animation test Screen</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
+      {/* <TouchableOpacity
         onPress={() => navigation.navigate('AudioTestScreen')}
         className="bg-blue-500 p-4 rounded mb-2">
         <Text className="text-white text-center">Audio test Screen</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <TouchableOpacity
         onPress={() => navigation.navigate('FontTestScreen')}
         className="bg-blue-500 p-4 rounded mb-2">
         <Text className="text-white text-center">Font test Screen</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => navigation.navigate('AutoSizeTextScreen')}
+        className="bg-blue-500 p-4 rounded mb-2">
+        <Text className="text-white text-center">AutoSize text Screen</Text>
       </TouchableOpacity>
 
       {/* <TouchableOpacity

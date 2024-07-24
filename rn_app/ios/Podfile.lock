@@ -979,6 +979,9 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - react-native-track-player (4.1.1):
+    - React-Core
+    - SwiftAudioEx (= 1.1.0)
   - React-nativeconfig (0.74.3)
   - React-NativeModulesApple (0.74.3):
     - glog
@@ -1273,6 +1276,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - Yoga
   - SocketRocket (0.7.0)
+  - SwiftAudioEx (1.1.0)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -1311,6 +1315,7 @@ DEPENDENCIES:
   - "react-native-blur (from `../node_modules/@react-native-community/blur`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
+  - react-native-track-player (from `../node_modules/react-native-track-player`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -1342,6 +1347,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - SocketRocket
+    - SwiftAudioEx
 
 EXTERNAL SOURCES:
   boost:
@@ -1411,6 +1417,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-slider:
     :path: "../node_modules/@react-native-community/slider"
+  react-native-track-player:
+    :path: "../node_modules/react-native-track-player"
   React-nativeconfig:
     :path: "../node_modules/react-native/ReactCommon"
   React-NativeModulesApple:
@@ -1500,6 +1508,7 @@ SPEC CHECKSUMS:
   react-native-blur: a2acf22fd7bd13621df5e0b1c130b81adea7009c
   react-native-safe-area-context: 422017db8bcabbada9ad607d010996c56713234c
   react-native-slider: ce295d2bf830a7990af05b0bd70ab28c133e230c
+  react-native-track-player: 82ef1756ffeea61140fea17519ecd6d64ec3cf3e
   React-nativeconfig: fa5de9d8f4dbd5917358f8ad3ad1e08762f01dcb
   React-NativeModulesApple: 585d1b78e0597de364d259cb56007052d0bda5e5
   React-perflogger: 7bb9ba49435ff66b666e7966ee10082508a203e8
@@ -1527,6 +1536,7 @@ SPEC CHECKSUMS:
   RNReanimated: 9c213184c27dc4a2ed7e9ff41a4b0b9258bb54f0
   RNScreens: 5aeecbb09aa7285379b6e9f3c8a3c859bb16401c
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
+  SwiftAudioEx: f6aa653770f3a0d3851edaf8d834a30aee4a7646
   Yoga: 88480008ccacea6301ff7bf58726e27a72931c8d
 
 PODFILE CHECKSUM: 614fdb6519729ed992ddb38ba50cd075866d3916

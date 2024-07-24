@@ -6,7 +6,6 @@
  */
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createStackNavigator} from '@react-navigation/stack';
 import React, {useEffect} from 'react';
 import {Animated} from 'react-native';
@@ -23,15 +22,24 @@ import {BorderColorTestScreen} from './app/BorderColorTestScreen';
 import {SafeAreaTestScreen} from './app/SafeAreaTest';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {AnimationTestScreen} from './app/AnimationTestScreen';
-import TrackPlayer from 'react-native-track-player';
+import TrackPlayer, {
+  AppKilledPlaybackBehavior,
+} from 'react-native-track-player';
 import {AudioTestScreen} from './app/AudioTestScreen';
 import {FedraFontTestScreen} from './app/FedraFontTestScreen';
+import {AutoSizeTextScreen} from './app/FontSizeFitTestScreen';
 const MainStack = createStackNavigator();
 
 function App(): React.JSX.Element {
   useEffect(() => {
     try {
-      TrackPlayer.setupPlayer();
+      // TrackPlayer.setupPlayer();
+      // TrackPlayer.updateOptions({
+      //   android: {
+      //     appKilledPlaybackBehavior:
+      //       AppKilledPlaybackBehavior.StopPlaybackAndRemoveNotification,
+      //   },
+      // });
     } catch (e) {
       console.error(e);
     }
@@ -108,6 +116,11 @@ function App(): React.JSX.Element {
             options={{headerShown: false}}
             name="FontTestScreen"
             component={FedraFontTestScreen}
+          />
+          <MainStack.Screen
+            options={{headerShown: false}}
+            name="AutoSizeTextScreen"
+            component={AutoSizeTextScreen}
           />
           <MainStack.Screen
             options={({navigation, route}) => {

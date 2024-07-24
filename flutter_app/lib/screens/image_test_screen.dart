@@ -21,6 +21,8 @@ class ImageTestScreen extends HookWidget {
             images[5],
             height: 300,
             width: 300,
+            fit: BoxFit.cover,
+            alignment: Alignment.bottomLeft,
           ),
         ),
       ),
