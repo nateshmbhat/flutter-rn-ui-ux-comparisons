@@ -6,6 +6,7 @@ import 'package:flutter_poc/screens/blur_test_screen.dart';
 import 'package:flutter_poc/screens/border_color_screen.dart';
 import 'package:flutter_poc/screens/border_test_screen.dart';
 import 'package:flutter_poc/screens/color_test_screen.dart';
+import 'package:flutter_poc/screens/confetti_test_screen.dart';
 import 'package:flutter_poc/screens/fedra_font_test_screen.dart';
 import 'package:flutter_poc/screens/gallery_view_source_screen.dart';
 import 'package:flutter_poc/screens/hero_anim_source_screen.dart';
@@ -92,7 +93,13 @@ class MyApp extends StatelessWidget {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => AutoSizeTextScreen()));
                 },
-                child: Text('AutoSize text Screen'))
+                child: Text('AutoSize text Screen')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => ConfettiDemoScreen()));
+                },
+                child: Text('Confetti Demo')),
           ],
         );
       })),

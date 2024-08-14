@@ -28,6 +28,7 @@ import TrackPlayer, {
 import {AudioTestScreen} from './app/AudioTestScreen';
 import {FedraFontTestScreen} from './app/FedraFontTestScreen';
 import {AutoSizeTextScreen} from './app/FontSizeFitTestScreen';
+import ConfettiDemo from './app/ConfettiTestScreen';
 const MainStack = createStackNavigator();
 
 function App(): React.JSX.Element {
@@ -121,6 +122,11 @@ function App(): React.JSX.Element {
             options={{headerShown: false}}
             name="AutoSizeTextScreen"
             component={AutoSizeTextScreen}
+          />
+          <MainStack.Screen
+            options={{headerShown: false}}
+            name="ConfettiTest"
+            component={ConfettiDemo}
           />
           <MainStack.Screen
             options={({navigation, route}) => {

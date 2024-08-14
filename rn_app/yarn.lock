@@ -3167,6 +3167,7 @@ __metadata:
     prettier: 2.8.8
     react: 18.2.0
     react-native: 0.74.3
+    react-native-confetti-cannon: ^1.5.2
     react-native-gesture-handler: ^2.17.1
     react-native-reanimated: ^3.13.0
     react-native-responsive-fontsize: ^0.5.1
@@ -8512,6 +8513,13 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
+  languageName: node
+  linkType: hard
+
+"react-native-confetti-cannon@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "react-native-confetti-cannon@npm:1.5.2"
+  checksum: 09026fd93304c0f3c3acfcf8dfc9b25003b30826031dffd81df6eea3b66dcee84f6ac4237719a84d3d71cb430f4fbf53d4c22b64ef17d439d5a3e5986c2ada83
   languageName: node
   linkType: hard
 

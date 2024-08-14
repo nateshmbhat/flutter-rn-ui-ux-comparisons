@@ -78,6 +78,12 @@ export const HomeScreen = () => {
         <Text className="text-white text-center">AutoSize text Screen</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity
+        onPress={() => navigation.navigate('ConfettiTest')}
+        className="bg-blue-500 p-4 rounded mb-2">
+        <Text className="text-white text-center">Confetti Demo</Text>
+      </TouchableOpacity>
+
       {/* <TouchableOpacity
         onPress={() => navigation.navigate('SafeAreaTestScreen')}
         className="bg-blue-500 p-4 rounded mb-2">
